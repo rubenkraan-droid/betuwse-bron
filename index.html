@@ -243,26 +243,27 @@ a{color:#2f4a36}a:hover{color:#1f3325}
 </figure>
 </div>
 <div id="boeken" class="wrap" style="position: relative; margin-top: -56px">
-<form class="boekbalk" style="margin: 0 32px; padding: 24px; background: #ffffff; border-radius: 14px; box-shadow: 0 12px 32px rgba(42,36,32,0.10)" aria-label="Beschikbaarheid bekijken">
+<form id="boekform" class="boekbalk" style="margin: 0 32px; padding: 24px; background: #ffffff; border-radius: 14px; box-shadow: 0 12px 32px rgba(42,36,32,0.10)" aria-label="Verblijf aanvragen">
 <div class="book">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="aankomst" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #6b5f55">AANKOMST</label>
-<input id="aankomst" type="date" style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
+<input id="aankomst" name="aankomst" type="date" required style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="vertrek" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #6b5f55">VERTREK</label>
-<input id="vertrek" type="date" style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
+<input id="vertrek" name="vertrek" type="date" required style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="gasten" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #6b5f55">GASTEN</label>
-<select id="gasten" style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
+<select id="gasten" name="gasten" style="height: 48px; padding: 0 14px; border: 1px solid #e6dccd; border-radius: 6px; font: inherit; color: #2a2420; background: #faf5ec">
 <option>2 gasten</option>
 <option>3 gasten</option>
 <option>4 gasten</option>
 </select>
 </div>
-<button type="button" style="height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #2f4a36; color: #faf5ec; font: inherit; font-weight: 600; cursor: pointer">Bekijk beschikbaarheid</button>
+<button type="submit" style="height: 48px; padding: 0 28px; border: 0; border-radius: 999px; background: #2f4a36; color: #faf5ec; font: inherit; font-weight: 600; cursor: pointer">Vraag uw verblijf aan</button>
 </div>
+<p id="boekmelding" role="status" style="margin: 16px 0 0; font-size: 13px; line-height: 20px; color: #6b5f55">Uw aanvraag opent in uw e-mailprogramma. Lukt dat niet? Mail dan naar <a href="mailto:stay@betuwsebron.nl">stay@betuwsebron.nl</a>.</p>
 </form>
 </div>
 </section>
@@ -466,5 +467,49 @@ a{color:#2f4a36}a:hover{color:#1f3325}
 </footer>
 
 </div>
+<script>
+(function () {
+  var form = document.getElementById('boekform');
+  if (!form) return;
+  var aankomst = document.getElementById('aankomst');
+  var vertrek = document.getElementById('vertrek');
+  var gasten = document.getElementById('gasten');
+  var melding = document.getElementById('boekmelding');
+  var standaard = melding.innerHTML;
+  var MIN_NACHTEN = 2;
+
+  function iso(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function datum(v) { var p = v.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function lang(d) { return d.toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); }
+  function fout(tekst) { melding.textContent = tekst; melding.style.color = '#b4412f'; }
+
+  var vandaag = new Date();
+  aankomst.min = iso(vandaag);
+  aankomst.addEventListener('change', function () {
+    if (!aankomst.value) return;
+    var eerste = datum(aankomst.value);
+    eerste.setDate(eerste.getDate() + MIN_NACHTEN);
+    vertrek.min = iso(eerste);
+    if (!vertrek.value || datum(vertrek.value) < eerste) vertrek.value = iso(eerste);
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    melding.innerHTML = standaard; melding.style.color = '#6b5f55';
+    if (!aankomst.value || !vertrek.value) { fout('Kies een aankomst- en een vertrekdatum.'); return; }
+    var a = datum(aankomst.value), v = datum(vertrek.value);
+    var nachten = Math.round((v - a) / 86400000);
+    if (nachten < MIN_NACHTEN) { fout('U verblijft minimaal ' + MIN_NACHTEN + ' nachten. Kies een latere vertrekdatum.'); return; }
+    var onderwerp = 'Aanvraag verblijf van ' + a.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' }) + ' tot ' + v.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+    var tekst = 'Goedendag,\n\nIk wil graag een verblijf aanvragen in Betuwse Bron.\n\n'
+      + 'Aankomst: ' + lang(a) + '\n'
+      + 'Vertrek: ' + lang(v) + '\n'
+      + 'Aantal nachten: ' + nachten + '\n'
+      + 'Aantal gasten: ' + gasten.value.replace(' gasten', '') + '\n\n'
+      + 'Mijn naam: \nMijn telefoonnummer: \n\nMet vriendelijke groet,\n';
+    window.location.href = 'mailto:stay@betuwsebron.nl?subject=' + encodeURIComponent(onderwerp) + '&body=' + encodeURIComponent(tekst);
+  });
+})();
+</script>
 </body>
 </html>

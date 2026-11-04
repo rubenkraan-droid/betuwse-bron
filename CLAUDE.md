@@ -35,7 +35,7 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 - Placeholders: prijs per nacht (`index.html`) en telefoon (voet van alle pagina's). Zoek op `[` om ze te vinden.
 - Tips op `omgeving/` (fruitpark, De Verschzaak, routes) zijn op 4 november 2026 online opgezocht. Controleer ze af en toe.
 - Te controleren teksten in het blok Ligging: "geen doorgaand verkeer" en "alles binnen loopafstand".
-- De boekingsbalk doet nog niets. Koppel hem aan een boekingssysteem of laat hem doorlinken naar Airbnb of Booking.
+- De boekingsbalk maakt een aanvraag per e-mail aan stay@betuwsebron.nl (script onderaan `index.html`, minimaal 2 nachten). Later eventueel vervangen door een boekingssysteem.
 - Zodra de prijs bekend is: ook toevoegen aan de gestructureerde gegevens (JSON-LD) en `llms.txt`.
 
 ## Vindbaarheid (SEO en AI-zoekers)
