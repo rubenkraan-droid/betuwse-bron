@@ -1,0 +1,5 @@
+# Alle zoekmachines en AI-zoekers zijn welkom.
+User-agent: *
+Allow: /
+
+Sitemap: https://betuwsebron.nl/sitemap.xml

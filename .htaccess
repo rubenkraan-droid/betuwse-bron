@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# www naar het hoofddomein
+RewriteCond %{HTTP_HOST} ^www\.betuwsebron\.nl$ [NC]
+RewriteRule ^ https://betuwsebron.nl%{REQUEST_URI} [L,R=301]
+
+# Interne bestanden niet publiek tonen
+RewriteRule ^(CLAUDE|README)\.md$ - [F,L,NC]
+
+# Afbeeldingen en logo's lang in de browser bewaren
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|webp|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
