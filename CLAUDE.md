@@ -33,7 +33,7 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 ## Nog open
 
 - Placeholders in `index.html`: prijs per nacht, telefoon en hoe de sleutel wordt overgedragen.
-- Placeholders op de subpagina's: temperatuur en huisregels van de hottub (`wellness/`), afstanden en drie tips (`omgeving/`), bedden, sleutel, roken, geluid, annulering en betaling (`praktisch/`). Zoek op `[` om ze te vinden.
+- Placeholders op de subpagina's: temperatuur en huisregels van de hottub (`wellness/`), afstanden en drie tips (`omgeving/`), sleutel, roken, geluid, annulering en betaling (`praktisch/`). Zoek op `[` om ze te vinden.
 - Te controleren teksten in het blok Ligging: "geen doorgaand verkeer" en "alles binnen loopafstand".
 - De boekingsbalk doet nog niets. Koppel hem aan een boekingssysteem of laat hem doorlinken naar Airbnb of Booking.
 - Zodra de prijs bekend is: ook toevoegen aan de gestructureerde gegevens (JSON-LD) en `llms.txt`.
