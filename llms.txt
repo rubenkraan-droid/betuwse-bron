@@ -18,3 +18,10 @@
 
 - E-mail: stay@betuwsebron.nl
 - Website: https://betuwsebron.nl/
+
+## Pagina's
+
+- [Homepage](https://betuwsebron.nl/): overzicht van het chalet, prijzen en veelgestelde vragen
+- [Wellness](https://betuwsebron.nl/wellness/): de privé-hottub op het terras
+- [Omgeving](https://betuwsebron.nl/omgeving/): Ochten, de Waal en de Betuwe door het jaar
+- [Praktische informatie](https://betuwsebron.nl/praktisch/): aankomst, vertrek, inbegrepen en huisregels

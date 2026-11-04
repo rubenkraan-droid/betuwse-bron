@@ -33,12 +33,14 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 ## Nog open
 
 - Placeholders in `index.html`: prijs per nacht, telefoon en hoe de sleutel wordt overgedragen.
+- Placeholders op de subpagina's: temperatuur en huisregels van de hottub (`wellness/`), afstanden en drie tips (`omgeving/`), bedden, sleutel, roken, geluid, annulering en betaling (`praktisch/`). Zoek op `[` om ze te vinden.
 - Te controleren teksten in het blok Ligging: "geen doorgaand verkeer" en "alles binnen loopafstand".
 - De boekingsbalk doet nog niets. Koppel hem aan een boekingssysteem of laat hem doorlinken naar Airbnb of Booking.
 - Zodra de prijs bekend is: ook toevoegen aan de gestructureerde gegevens (JSON-LD) en `llms.txt`.
 
 ## Vindbaarheid (SEO en AI-zoekers)
 
+- Pagina's: `index.html`, `wellness/`, `omgeving/` en `praktisch/` (elk met een eigen `index.html`). Kop, voet en stijlblok staan in elke pagina apart: wijzig ze op alle pagina's tegelijk. Subpagina's verwijzen met `../` naar `assets/`.
 - `robots.txt`, `sitemap.xml` en `llms.txt` staan in de hoofdmap. Werk `lastmod` in de sitemap bij en voeg nieuwe pagina's toe.
 - In `index.html` staan gestructureerde gegevens (`VacationRental` en `FAQPage`). Houd die gelijk aan de zichtbare tekst: elke vraag in `FAQPage` staat ook op de pagina. Geen placeholders in de gestructureerde gegevens.
 - Foto's op de pagina zijn WebP. De JPG-originelen blijven staan voor deelvoorbeelden (Open Graph).
