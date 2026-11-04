@@ -7,6 +7,31 @@
 <meta name="description" content="Vrijstaand vakantiechalet in Ochten met een privé-hottub op het terras, alleen voor u. Voor 4 personen, in de fruitstreek van de Betuwe.">
 <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://betuwsebron.nl/wellness/">
+<!--talen-->
+<link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/wellness/">
+<link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/wellness/">
+<link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/wellness/">
+<script>
+(function () {
+  var huidig = 'nl', paden = { nl: '/wellness/', en: '/en/wellness/' };
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-taal]');
+    if (a) { try { localStorage.setItem('bb-taal', a.getAttribute('data-taal')); } catch (x) {} }
+  });
+  if (/bot|crawl|spider|slurp|preview|lighthouse|facebookexternalhit|whatsapp/i.test(navigator.userAgent)) return;
+  var keuze = null;
+  try { keuze = localStorage.getItem('bb-taal'); } catch (x) {}
+  if (keuze !== 'nl' && keuze !== 'en') {
+    var talen = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+    var zone = '';
+    try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (x) {}
+    var nlTaal = talen.some(function (l) { return /^(nl|fy)(-|$)/i.test(l); });
+    keuze = nlTaal || zone === 'Europe/Amsterdam' ? 'nl' : 'en';
+  }
+  if (keuze !== huidig) location.replace(paden[keuze] + location.search + location.hash);
+})();
+</script>
+<!--/talen-->
 <meta name="theme-color" content="#2f4a36">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
@@ -50,6 +75,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..560,100&amp;family=Figtree:wght@400;500;600&amp;display=swap">
 <style>
+.taal{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border:1px solid #e6dccd;border-radius:999px;color:#2a2420;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.14em}
+.taal:hover{border-color:#2f4a36;color:#2f4a36}
+.kop-rechts{display:flex;align-items:center;gap:12px}
+@media (max-width:520px){.kop-cta{display:none !important}}
 html{scroll-behavior:smooth}
 body{margin:0;background:#faf5ec}
 img{max-width:100%;height:auto}
@@ -86,7 +115,10 @@ a{color:#2f4a36}a:hover{color:#1f3325}
 <a href="../praktisch/" style="text-decoration: none; font-weight: 500; color: #2a2420">Praktisch</a>
 <a href="../#prijzen" style="text-decoration: none; font-weight: 500; color: #2a2420">Prijzen</a>
 </nav>
-<a href="../#boeken" style="display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border-radius: 999px; background: #2f4a36; color: #faf5ec; text-decoration: none; font-weight: 600; font-size: 15px">Beschikbaarheid</a>
+<div class="kop-rechts">
+<!--taalknop--><a class="taal" href="../en/wellness/" hreflang="en" lang="en" data-taal="en" aria-label="English version"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4a36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg>EN</a><!--/taalknop-->
+<a class="kop-cta" href="../#boeken" style="display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border-radius: 999px; background: #2f4a36; color: #faf5ec; text-decoration: none; font-weight: 600; font-size: 15px">Beschikbaarheid</a>
+</div>
 </div>
 </header>
 
