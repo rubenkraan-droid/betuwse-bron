@@ -57,3 +57,4 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 - Zet nooit wachtwoorden, sleutels of `.env`-bestanden in de repository.
 - Laat elke publicatie (push naar `main`) eerst bevestigen.
 - Vraag het voordat bestaande bestanden in de repository worden verwijderd of overschreven.
+- Adres in JSON-LD: Rivierendal 56, 4051 SZ Ochten, coördinaten 51.91497, 5.58742 (BAG via PDOK, 5 november 2026). Google eist voor VacationRental `identifier`, `geo` en `occupancy.value`.
