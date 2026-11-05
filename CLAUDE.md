@@ -33,11 +33,10 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 
 ## Nog open
 
-- Placeholder: prijs per nacht (`index.html`). Zoek op `[` om hem te vinden.
+- Prijs: vanaf €150 per nacht (5 november 2026). Staat op de homepage, in de FAQ, in de JSON-LD (`priceRange`) en in `llms.txt`. Pas bij een wijziging alle vier aan, ook in `../tools/vertaal.py`.
 - Tips op `omgeving/` (fruitpark, De Verschzaak, routes) zijn op 4 november 2026 online opgezocht. Controleer ze af en toe.
 - Te controleren teksten in het blok Ligging: "geen doorgaand verkeer" en "alles binnen loopafstand".
 - De boekingsbalk maakt een aanvraag per e-mail aan stay@betuwsebron.nl (script onderaan `index.html`, minimaal 2 nachten). Later eventueel vervangen door een boekingssysteem.
-- Zodra de prijs bekend is: ook toevoegen aan de gestructureerde gegevens (JSON-LD) en `llms.txt`.
 
 ## Vindbaarheid (SEO en AI-zoekers)
 
