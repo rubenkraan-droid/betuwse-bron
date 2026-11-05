@@ -2,58 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://betuwsebron.nl/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/en/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/"/>
+  </url>
+  <url>
+    <loc>https://betuwsebron.nl/de/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/wellness/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/wellness/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/wellness/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/wellness/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/wellness/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/en/wellness/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/wellness/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/wellness/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/wellness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/wellness/"/>
+  </url>
+  <url>
+    <loc>https://betuwsebron.nl/de/wellness/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/wellness/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/wellness/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/wellness/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/wellness/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/omgeving/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/omgeving/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/surroundings/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/umgebung/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/omgeving/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/en/surroundings/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/omgeving/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/surroundings/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/umgebung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/omgeving/"/>
+  </url>
+  <url>
+    <loc>https://betuwsebron.nl/de/umgebung/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/omgeving/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/surroundings/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/umgebung/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/omgeving/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/praktisch/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/praktisch/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/practical/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/praktisches/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/praktisch/"/>
   </url>
   <url>
     <loc>https://betuwsebron.nl/en/practical/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/praktisch/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/practical/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/praktisches/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/praktisch/"/>
+  </url>
+  <url>
+    <loc>https://betuwsebron.nl/de/praktisches/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/praktisch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/practical/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/praktisches/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/praktisch/"/>
   </url>
 </urlset>

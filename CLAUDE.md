@@ -18,7 +18,7 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 
 ## Schrijfregels
 
-- De site is tweetalig. Nederlands is de bron, Engels wordt gemaakt met `../tools/vertaal.py`.
+- De site is drietalig. Nederlands is de bron, Engels en Duits worden gemaakt met `../tools/vertaal.py`.
 - In de Nederlandse teksten geen Engelse vaktermen.
 - Spreek de lezer aan met u, in een iets formele en rustige toon. Gebruik korte zinnen.
 - Geen gedachtestreepjes (em-dashes): gebruik komma's, punten of dubbele punten.
@@ -42,9 +42,9 @@ Verhuurwebsite voor chalet 56 op Resort Rivierendal in Ochten (Betuwe): een vrij
 ## Vindbaarheid (SEO en AI-zoekers)
 
 - Pagina's: `index.html`, `wellness/`, `omgeving/` en `praktisch/` (elk met een eigen `index.html`). Kop, voet en stijlblok staan in elke pagina apart: wijzig ze op alle pagina's tegelijk. Subpagina's verwijzen met `../` naar `assets/`.
-- Engelse versie: `en/`, `en/wellness/`, `en/surroundings/` en `en/practical/`. Wijzig nooit direct in `en/`. Pas de Nederlandse pagina aan, voeg de vertaling toe aan `VERTALING` in `../tools/vertaal.py` en draai `python3 -I ../tools/vertaal.py .` vanuit deze map. Het script stopt als er Nederlands overblijft of een vertaling niet meer klopt.
-- Taalkeuze: elke pagina heeft hreflang-links en een taalscript in de kop (tussen `<!--talen-->`). Een eigen keuze via de taalknop wordt onthouden. Zonder keuze: Nederlandse browsertaal of tijdzone Europe/Amsterdam geeft Nederlands, anders Engels. Zoekmachines worden niet doorgestuurd.
-- `robots.txt`, `sitemap.xml` en `llms.txt` staan in de hoofdmap. De sitemap bevat beide talen met hreflang. Werk `lastmod` in de sitemap bij en voeg nieuwe pagina's toe.
+- Engels: `en/`, `en/wellness/`, `en/surroundings/`, `en/practical/`. Duits: `de/`, `de/wellness/`, `de/umgebung/`, `de/praktisches/`. Wijzig nooit direct in `en/` of `de/`. Pas de Nederlandse pagina aan, voeg de vertalingen toe aan `VERTALING_EN` en `VERTALING_DE` in `../tools/vertaal.py` en draai `python3 -I ../tools/vertaal.py .` vanuit deze map. Het script stopt als er Nederlands overblijft of een vertaling niet meer klopt.
+- Taalkeuze: elke pagina heeft hreflang-links en een taalscript in de kop (tussen `<!--talen-->`). Een eigen keuze via de taalknop wordt onthouden. Zonder keuze, in deze volgorde: Nederlandse browsertaal geeft Nederlands, Duitse browsertaal Duits, tijdzone Amsterdam Nederlands, tijdzone Berlijn, Wenen of Zürich Duits, anders Engels. Zoekmachines worden niet doorgestuurd.
+- `robots.txt`, `sitemap.xml` en `llms.txt` staan in de hoofdmap. De sitemap bevat alle drie de talen met hreflang. Werk `lastmod` in de sitemap bij en voeg nieuwe pagina's toe.
 - In `index.html` staan gestructureerde gegevens (`VacationRental` en `FAQPage`). Houd die gelijk aan de zichtbare tekst: elke vraag in `FAQPage` staat ook op de pagina. Geen placeholders in de gestructureerde gegevens.
 - Foto's op de pagina zijn WebP. De JPG-originelen blijven staan voor deelvoorbeelden (Open Graph).
 - `.htaccess` stuurt www door naar betuwsebron.nl en blokkeert `CLAUDE.md` en `README.md` voor bezoekers.

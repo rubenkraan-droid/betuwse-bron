@@ -10,10 +10,11 @@
 <!--talen-->
 <link rel="alternate" hreflang="nl" href="https://betuwsebron.nl/">
 <link rel="alternate" hreflang="en" href="https://betuwsebron.nl/en/">
+<link rel="alternate" hreflang="de" href="https://betuwsebron.nl/de/">
 <link rel="alternate" hreflang="x-default" href="https://betuwsebron.nl/">
 <script>
 (function () {
-  var huidig = 'nl', paden = { nl: '/', en: '/en/' };
+  var huidig = 'nl', paden = { nl: '/', en: '/en/', de: '/de/' };
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('[data-taal]');
     if (a) { try { localStorage.setItem('bb-taal', a.getAttribute('data-taal')); } catch (x) {} }
@@ -21,12 +22,16 @@
   if (/bot|crawl|spider|slurp|preview|lighthouse|facebookexternalhit|whatsapp/i.test(navigator.userAgent)) return;
   var keuze = null;
   try { keuze = localStorage.getItem('bb-taal'); } catch (x) {}
-  if (keuze !== 'nl' && keuze !== 'en') {
+  if (!paden[keuze]) {
     var talen = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
     var zone = '';
     try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (x) {}
-    var nlTaal = talen.some(function (l) { return /^(nl|fy)(-|$)/i.test(l); });
-    keuze = nlTaal || zone === 'Europe/Amsterdam' ? 'nl' : 'en';
+    var heeft = function (re) { return talen.some(function (l) { return re.test(l); }); };
+    if (heeft(/^(nl|fy)(-|$)/i)) keuze = 'nl';
+    else if (heeft(/^de(-|$)/i)) keuze = 'de';
+    else if (zone === 'Europe/Amsterdam') keuze = 'nl';
+    else if (/^Europe\/(Berlin|Vienna|Zurich|Busingen)$/.test(zone)) keuze = 'de';
+    else keuze = 'en';
   }
   if (keuze !== huidig) location.replace(paden[keuze] + location.search + location.hash);
 })();
@@ -35,6 +40,8 @@
 <meta name="theme-color" content="#2f4a36">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:site_name" content="Betuwse Bron">
 <meta property="og:title" content="Betuwse Bron | Vakantiechalet met privéwellness in de Betuwe">
 <meta property="og:description" content="Vrijstaand vakantiechalet voor 4 personen met eigen hottub op Resort Rivierendal in Ochten, aan een bomenlaan in de Betuwe.">
@@ -216,10 +223,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..560,100&amp;family=Figtree:wght@400;500;600&amp;display=swap">
 <style>
-.taal{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border:1px solid #e6dccd;border-radius:999px;color:#2a2420;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.14em}
-.taal:hover{border-color:#2f4a36;color:#2f4a36}
+/*taal*/.taal{display:inline-flex;align-items:center;gap:2px;height:40px;padding:0 6px;border:1px solid #e6dccd;border-radius:999px}
+.taal a{display:inline-flex;align-items:center;height:30px;padding:0 9px;border-radius:999px;color:#6b5f55;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.08em}
+.taal a:hover{color:#2f4a36}
+.taal a[aria-current]{background:#2f4a36;color:#faf5ec}
 .kop-rechts{display:flex;align-items:center;gap:12px}
 @media (max-width:520px){.kop-cta{display:none !important}}
+@media (min-width:901px) and (max-width:1140px){.kop-cta{display:none !important}.navlinks{gap:22px !important;font-size:15px}}
+/*/taal*/
 html{scroll-behavior:smooth}
 body{margin:0;background:#faf5ec}
 img{max-width:100%;height:auto}
@@ -257,7 +268,7 @@ a{color:#2f4a36}a:hover{color:#1f3325}
 <a href="#prijzen" style="text-decoration: none; font-weight: 500; color: #2a2420">Prijzen</a>
 </nav>
 <div class="kop-rechts">
-<!--taalknop--><a class="taal" href="en/" hreflang="en" lang="en" data-taal="en" aria-label="English version"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4a36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg>EN</a><!--/taalknop-->
+<!--taalknop--><nav class="taal" aria-label="Taal / Language / Sprache"><a href="./" hreflang="nl" lang="nl" data-taal="nl" title="Nederlands" aria-current="true">NL</a><a href="en/" hreflang="en" lang="en" data-taal="en" title="English">EN</a><a href="de/" hreflang="de" lang="de" data-taal="de" title="Deutsch">DE</a></nav><!--/taalknop-->
 <a class="kop-cta" href="#boeken" style="display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border-radius: 999px; background: #2f4a36; color: #faf5ec; text-decoration: none; font-weight: 600; font-size: 15px">Beschikbaarheid</a>
 </div>
 </div>
